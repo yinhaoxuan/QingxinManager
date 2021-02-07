@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from QingxinManager.network import gen_response, preprocess
 from article.models import Person, Department, Article
 
+
 # Create your views here.
 
 def index(request):
@@ -28,3 +29,19 @@ def add_person(request):
         return gen_response(401, "Permission denied.")
     Person(name=name, id_number=id_number, department=department).save()
     return gen_response(201, "Add person successfully.")
+
+
+def add_article(request):
+    pass
+
+
+def get_article(request):
+    pass
+
+
+def get_person(request):
+    pass
+
+
+def get_department(request):
+    pass
