@@ -109,3 +109,24 @@ class ArticleTest(TestCase):
         self.assertEqual(content['authors'][0]['id'], self.yhx.id)
         self.assertEqual(content['authors'][1]['id'], self.chm.id)
         self.assertEqual(content['editor']['id'], self.yhx.id)
+
+        # Get person list.
+        code, content = self.get_response('person_list', {})
+        self.assertEqual(code, 200)
+        self.assertEqual(len(content), 2)
+        self.assertEqual(content[0]['id'], self.yhx.id)
+        self.assertEqual(content[1]['id'], self.chm.id)
+
+        # Get department list.
+        code, content = self.get_response('department_list', {})
+        self.assertEqual(code, 200)
+        self.assertEqual(len(content), 2)
+        self.assertEqual(content[0]['id'], self.plb.id)
+        self.assertEqual(content[1]['id'], self.ztb.id)
+
+        # Get article list.
+        code, content = self.get_response('article_list', {})
+        self.assertEqual(code, 200)
+        self.assertEqual(len(content), 2)
+        self.assertEqual(content[0]['id'], self.atc1.id)
+        self.assertEqual(content[1]['id'], self.atc2.id)

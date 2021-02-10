@@ -121,3 +121,15 @@ def get_department(request):
         })
     except Exception as e:
         return gen_response(409, f'Department not found: {e}')
+
+
+def person_list(request):
+    return gen_response(200, [person_short_info(person) for person in Person.objects.all()])
+
+
+def article_list(request):
+    return gen_response(200, [article_short_info(article) for article in Article.objects.all()])
+
+
+def department_list(request):
+    return gen_response(200, [department_short_info(department) for department in Department.objects.all()])
