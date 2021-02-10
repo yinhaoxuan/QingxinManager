@@ -23,7 +23,7 @@ def person_short_info(person):
 
 
 def article_short_info(article):
-    return {'id': article.id, 'title': article.title}
+    return {'id': article.id, 'name': article.title}
 
 
 def department_short_info(department):

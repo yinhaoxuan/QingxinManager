@@ -4,7 +4,7 @@ import './index.css'
 import axios from "axios";
 import NavigationBlock from './NavigationBlock'
 
-class App extends React.Component {
+class App extends Component {
     state = {
         departments: [],
         persons: [],
@@ -32,9 +32,9 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                <NavigationBlock Title="文章列表" List={this.state.articles}/>
-                <NavigationBlock Title="人员列表" List={this.state.persons}/>
-                <NavigationBlock Title="部门列表" List={this.state.departments}/>
+                <NavigationBlock Title="文章列表" List={this.state.articles} Type="article"/>
+                <NavigationBlock Title="人员列表" List={this.state.persons} Type="person"/>
+                <NavigationBlock Title="部门列表" List={this.state.departments} Type = "department"/>
             </div>
         )
     }
