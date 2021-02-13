@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import axios from "axios";
-import NavigationBlock from "./NavigationBlock";
+import ListDisplay from "./ListDisplay";
 
 class Department extends Component {
     state = {
@@ -28,8 +28,8 @@ class Department extends Component {
         return (
             <div>
                 <h1>{this.state.data.name}</h1>
-                <NavigationBlock Title="成员" List={this.state.data.members} Type="person"/>
-                <NavigationBlock Title="作品" List={this.state.data.articles} Type="article"/>
+                <ListDisplay Title="成员" List={this.state.data.members} Type="person"/>
+                <ListDisplay Title="作品" List={this.state.data.articles} Type="article"/>
             </div>
         )
     }

@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
 import axios from "axios";
-import NavigationBlock from './NavigationBlock'
+import ListDisplay from './ListDisplay'
 
 class Main extends Component {
     state = {
@@ -32,9 +32,9 @@ class Main extends Component {
     render() {
         return (
             <div>
-                <NavigationBlock Title="文章列表" List={this.state.articles} Type="article"/>
-                <NavigationBlock Title="人员列表" List={this.state.persons} Type="person"/>
-                <NavigationBlock Title="部门列表" List={this.state.departments} Type = "department"/>
+                <ListDisplay Title="文章列表" List={this.state.articles} Type="article"/>
+                <ListDisplay Title="人员列表" List={this.state.persons} Type="person"/>
+                <ListDisplay Title="部门列表" List={this.state.departments} Type = "department"/>
             </div>
         )
     }

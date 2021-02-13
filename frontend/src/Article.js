@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import axios from "axios";
+import ItemDisplay from "./ItemDisplay";
 
 class Article extends Component {
     state = {
@@ -26,10 +27,10 @@ class Article extends Component {
         return (
             <div>
                 <h1>{this.state.data.title}</h1>
-                <p>{"作者：" + this.state.data.authors.map((author) => {
-                    return author.name
+                <p>作者：{this.state.data.authors.map((author) => {
+                    return <ItemDisplay Data={author} Type='person'/>
                 })}</p>
-                <p>{"责编：" + this.state.data.editor.name}</p>
+                <p>责编：<ItemDisplay Data={this.state.data.editor} Typr='person'/></p>
                 <p>{this.state.data.content}</p>
             </div>
         )
