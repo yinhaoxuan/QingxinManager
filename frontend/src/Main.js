@@ -4,7 +4,7 @@ import './index.css'
 import axios from "axios";
 import NavigationBlock from './NavigationBlock'
 
-class App extends Component {
+class Main extends Component {
     state = {
         departments: [],
         persons: [],
@@ -40,4 +40,4 @@ class App extends Component {
     }
 }
 
-export default App
+export default Main
