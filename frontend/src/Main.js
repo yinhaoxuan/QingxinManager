@@ -12,17 +12,17 @@ class Main extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://45.76.244.125:8000/api/person_list')
+        axios.get('/api/person_list')
             .then(res => {
                 const persons = res.data.data
                 this.setState({persons})
             })
-        axios.get('http://45.76.244.125:8000/api/article_list')
+        axios.get('/api/article_list')
             .then(res => {
                 const articles = res.data.data
                 this.setState({articles})
             })
-        axios.get('http://45.76.244.125:8000/api/department_list')
+        axios.get('/api/department_list')
             .then(res => {
                 const departments = res.data.data
                 this.setState({departments})

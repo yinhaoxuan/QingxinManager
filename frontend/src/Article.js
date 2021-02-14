@@ -11,7 +11,7 @@ class Article extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://45.76.244.125:8000/api/get_article', {
+        axios.get('/api/get_article', {
             params: {
                 id: this.props.match.params.id
             }

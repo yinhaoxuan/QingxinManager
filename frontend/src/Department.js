@@ -12,7 +12,7 @@ class Department extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://45.76.244.125:8000/api/get_department', {
+        axios.get('/api/get_department', {
             params: {
                 id: this.props.match.params.id
             }
