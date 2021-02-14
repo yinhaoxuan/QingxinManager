@@ -56,6 +56,7 @@ MIDDLEWARE = [
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
     'http://45.76.244.125:3000',
+    'http://45.76.244.125:5000',
 ]
 
 ROOT_URLCONF = 'QingxinManager.urls'
