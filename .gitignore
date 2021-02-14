@@ -1,2 +1,3 @@
 /db.sqlite3
 QingxinManager/settings.py
+secret_key.txt
