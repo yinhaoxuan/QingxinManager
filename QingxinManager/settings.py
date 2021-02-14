@@ -25,7 +25,7 @@ SECRET_KEY = 'o3=amgp0@nk5(zr_(#sx%#uzek+c2h8bo26b%(*m@s-y=kj5$!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['45.76.244.125']
 
 
 # Application definition
@@ -55,6 +55,7 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
+    'http://45.76.244.125:3000',
 ]
 
 ROOT_URLCONF = 'QingxinManager.urls'

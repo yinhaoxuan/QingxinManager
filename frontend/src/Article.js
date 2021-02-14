@@ -11,7 +11,7 @@ class Article extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://127.0.0.1:8000/api/get_article', {
+        axios.get('http://45.76.244.125:8000/api/get_article', {
             params: {
                 id: this.props.match.params.id
             }
@@ -30,7 +30,7 @@ class Article extends Component {
                 <p>作者：{this.state.data.authors.map((author) => {
                     return <ItemDisplay Data={author} Type='person'/>
                 })}</p>
-                <p>责编：<ItemDisplay Data={this.state.data.editor} Typr='person'/></p>
+                <p>责编：<ItemDisplay Data={this.state.data.editor} Type='person'/></p>
                 <p>{this.state.data.content}</p>
             </div>
         )

@@ -15,7 +15,7 @@ class Person extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://127.0.0.1:8000/api/get_person', {
+        axios.get('http://45.76.244.125:8000/api/get_person', {
             params: {
                 id: this.props.match.params.id
             }
