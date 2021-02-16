@@ -25,7 +25,7 @@ class Article extends Component {
             <div>
                 <h1>{this.state.data.title}</h1>
                 <p>作者：{this.state.data.authors.map((author) => {
-                    return <ItemDisplay Data={author} Type='person'/>
+                    return <ItemDisplay Data={author} Type='person' key={author.id}/>
                 })}</p>
                 <p>责编：<ItemDisplay Data={this.state.data.editor} Type='person'/></p>
                 <p>部门：<ItemDisplay Data={this.state.data.department} Type='department'/></p>
