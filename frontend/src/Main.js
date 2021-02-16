@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
-import './index.css'
 import axios from "axios";
 import ListDisplay from './ListDisplay'
 import Api from "./Api";
