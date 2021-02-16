@@ -4,6 +4,7 @@ import axios from "axios";
 import ListDisplay from './ListDisplay'
 import Api from "./Api";
 import {Box} from "@material-ui/core";
+import TopBar from "./TopBar";
 
 class Main extends Component {
     state = {
@@ -29,11 +30,14 @@ class Main extends Component {
 
     render() {
         return (
-            <Box>
-                <ListDisplay Title="文章列表" List={this.state.articles} Type="article"/>
-                <ListDisplay Title="人员列表" List={this.state.persons} Type="person"/>
-                <ListDisplay Title="部门列表" List={this.state.departments} Type="department"/>
-            </Box>
+            <div>
+                <TopBar/>
+                <div>
+                    <ListDisplay Title="文章列表" List={this.state.articles} Type="article"/>
+                    <ListDisplay Title="人员列表" List={this.state.persons} Type="person"/>
+                    <ListDisplay Title="部门列表" List={this.state.departments} Type="department"/>
+                </div>
+            </div>
         )
     }
 }

@@ -11,7 +11,7 @@ function to_icon(type) {
 
 const ItemDisplay = (props) => {
     return (
-        <Chip clickable='true' icon={to_icon(props.Type)} label={props.Data.name} component='a' href={'#/' + props.Type + '/' + props.Data.id}/>
+        <Chip clickable icon={to_icon(props.Type)} label={props.Data.name} component='a' href={'#/' + props.Type + '/' + props.Data.id}/>
     )
 }
 
