@@ -1,3 +1,4 @@
 /db.sqlite3
 QingxinManager/settings.py
 secret_key.txt
+frontend/src/Url.js

@@ -84,6 +84,7 @@ def get_article(request):
             'content': article.content,
             'authors': [person_short_info(author) for author in article.authors.all()],
             'editor': person_short_info(article.editor),
+            'department': department_short_info(article.department),
         })
     except Exception as e:
         return gen_response(409, f'Article not found: {e}')

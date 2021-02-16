@@ -1,26 +1,23 @@
 import React, {Component} from 'react'
 import axios from "axios";
 import ItemDisplay from "./ItemDisplay";
+import Api from './Api'
 
 class Article extends Component {
     state = {
         data: {
             authors: [],
             editor: {},
+            department: {},
         }
     }
 
     componentDidMount() {
-        axios.get('/api/get_article', {
-            params: {
-                id: this.props.match.params.id
-            }
+        Api.get_article(this.props.match.params.id).then(res => {
+            const {data} = res.data
+            console.log(data)
+            this.setState({data})
         })
-            .then(res => {
-                const {data} = res.data
-                console.log(data)
-                this.setState({data})
-            })
     }
 
     render() {
@@ -31,6 +28,7 @@ class Article extends Component {
                     return <ItemDisplay Data={author} Type='person'/>
                 })}</p>
                 <p>责编：<ItemDisplay Data={this.state.data.editor} Type='person'/></p>
+                <p>部门：<ItemDisplay Data={this.state.data.department} Type='department'/></p>
                 <p>{this.state.data.content}</p>
             </div>
         )

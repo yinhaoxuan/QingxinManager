@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import './index.css'
 import axios from "axios";
 import ListDisplay from './ListDisplay'
+import Api from "./Api";
 
 class Main extends Component {
     state = {
@@ -12,21 +13,18 @@ class Main extends Component {
     }
 
     componentDidMount() {
-        axios.get('/api/person_list')
-            .then(res => {
-                const persons = res.data.data
-                this.setState({persons})
-            })
-        axios.get('/api/article_list')
-            .then(res => {
-                const articles = res.data.data
-                this.setState({articles})
-            })
-        axios.get('/api/department_list')
-            .then(res => {
-                const departments = res.data.data
-                this.setState({departments})
-            })
+        Api.person_list().then(res => {
+            const persons = res.data.data
+            this.setState({persons})
+        })
+        Api.article_list().then(res => {
+            const articles = res.data.data
+            this.setState({articles})
+        })
+        Api.department_list().then(res => {
+            const departments = res.data.data
+            this.setState({departments})
+        })
     }
 
     render() {
@@ -34,7 +32,7 @@ class Main extends Component {
             <div>
                 <ListDisplay Title="文章列表" List={this.state.articles} Type="article"/>
                 <ListDisplay Title="人员列表" List={this.state.persons} Type="person"/>
-                <ListDisplay Title="部门列表" List={this.state.departments} Type = "department"/>
+                <ListDisplay Title="部门列表" List={this.state.departments} Type="department"/>
             </div>
         )
     }

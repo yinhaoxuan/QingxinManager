@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import axios from "axios";
 import ListDisplay from "./ListDisplay";
+import Api from "./Api";
 
 class Department extends Component {
     state = {
@@ -12,16 +13,11 @@ class Department extends Component {
     }
 
     componentDidMount() {
-        axios.get('/api/get_department', {
-            params: {
-                id: this.props.match.params.id
-            }
+        Api.get_department(this.props.match.params.id).then(res => {
+            const {data} = res.data
+            console.log(data)
+            this.setState({data})
         })
-            .then(res => {
-                const {data} = res.data
-                console.log(data)
-                this.setState({data})
-            })
     }
 
     render() {
